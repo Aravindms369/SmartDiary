@@ -1,1 +1,1 @@
-# SmartDiary
+# SmartDiary made with django
