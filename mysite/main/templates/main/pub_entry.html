@@ -1,0 +1,19 @@
+{% extends "main/userpage.html" %}
+
+{% block content %}
+  <h1>hi {{user.username}} </h1>
+   <div class="row">
+    {% for post in posts %}
+     <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+      <div class="card-header">published: {{ post.published_date }}</div>
+      <div class="card-body">
+        <h5 class="card-title"><a href="{% url 'main:post_detail' pk=post.pk %}">{{ post.title }}</a></h5>
+        <p class="card-text">{{ post.text|linebreaksbr }}.</p>
+      </div>
+     </div>
+    {% empty %}
+      <li> No posts here....</li>
+    {% endfor %}
+   </div>
+   
+{% endblock %}

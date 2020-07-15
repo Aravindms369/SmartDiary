@@ -1,0 +1,22 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+  <div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body text-black bg-white">
+        <h1 class="text-center mb-3">
+          <i class="fas fa-user-plus"></i> Register
+        </h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+
+          <button class="btn" style="background-color:yellow; color:blue"type="submit">Register</button>
+        </form>
+        <p class="lead mt-4">
+          If you already have account,<a href="{% url 'main:login' %}"><strong>login</strong></a> instead.
+        </p>
+      </div>
+    </div>
+  </div>  
+{% endblock %}

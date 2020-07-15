@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-xl navbar-black" style="background-color: black; width: 1240px;">
+  <a class="navbar-brand" href="#" style="font-size: 30px;">DIARYGENIE</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse container container-fluid" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a href="{% url 'main:thisweek' %}">Entries this week<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'main:allentry' %}">All entries</a>
+      </li>
+      <li class="nav-item">
+        <a  href="{% url 'main:add_entry' %}">Add entry</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color:black;">
+            <a class="nav-link bg-black" href="{% url 'main:Search' %}" style="font-size: 13.5px;">Search public diary</a>
+            <a class="nav-link bg-black" href="{% url 'main:pub_entry' %}" style="font-size: 13.5px;">Public posts by Users</a>
+        </div>
+      </li>
+    </ul>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      {% if user.is_authenticated %}
+        <li>Welcome {{user.username}}</li>
+        <li><a href="/logout">LOGOUT</a></li>
+      {% else %}
+        <li><a href="/register">REGISTER</a></li>
+        <li><a href="/login">LOGIN</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

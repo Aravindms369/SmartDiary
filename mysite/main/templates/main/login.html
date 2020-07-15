@@ -1,0 +1,20 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+  <div class="row mt-5">
+    <div class="col-md-6 m-auto">
+      <div class="card card-body text-black bg-white">
+        <h1 class="text-center  mb-3"><i class="fas fa-sign-in-alt"></i>  Login</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+      
+          <button class="btn" style="background-color:yellow; color:blue"type="submit">Login</button>
+        </form>
+        <p class="lead mt-4">
+          No Account? <a href="{% url 'main:register' %}">Register</a>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

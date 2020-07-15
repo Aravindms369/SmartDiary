@@ -1,0 +1,51 @@
+<head>
+  {% load static %}
+ 
+  <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet" >
+  <!-- Compiled and minified CSS -->
+  <link href="{% static 'main/css/materialize.css' %}" rel="stylesheet" >
+ 
+ 
+  <!-- Compiled and minified JavaScript 1920 1080 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'main/fonts/icomoon/style.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'main/fonts/flaticon/font/flaticon.css' %}">
+
+  <link rel="stylesheet" href="{% static 'main/css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'main/css/jquery.fancybox.min.css' %}">
+
+
+  <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+  <style>
+    body{
+      background-image: url('{% static "main/images/wall1.jfif" %}');
+      background-size:1300px 1080px;
+      background-repeat: no-repeat;
+ 
+    }
+  </style>
+ </head>
+
+ <body>
+ 
+ 
+  {% include "main/includes/navbar2.html" %}
+  {% include "main/includes/messages.html" %}
+  <div class="container">
+   <br><br>
+   {% block content %}
+   {% endblock %}
+  </div>
+ 
+ </body>
+ 
+ <script src="{% static 'tinymce/js/prism.js' %}" ></script>
+ 

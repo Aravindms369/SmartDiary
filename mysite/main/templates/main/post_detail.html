@@ -1,0 +1,16 @@
+{% extends 'main/userpage.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h4>{{post.writer}}</h4>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <a class="btn btn-default" href="{% url 'main:post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+        <a class="btn btn-default" href="{% url 'main:post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove">Delete</span></a>
+    </div>
+{% endblock %}
