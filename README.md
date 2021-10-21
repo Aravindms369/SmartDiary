@@ -20,4 +20,3 @@ python manage.py migrate
 python manage.py runserver
 ```  
 4. Now You can Access the App in Localhost
-
