@@ -1,1 +1,1 @@
-# SmartDiary made with django
+# SmartDiary - An Online Diary System
